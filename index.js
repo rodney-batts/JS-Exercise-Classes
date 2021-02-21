@@ -83,18 +83,22 @@ constructor (model, milesPerGallon){
   this.tank = [0];
   this.odometer =[0];
   this.model = model;
-  this.milesPerGallon = milesPerGallon;
+  this.milesPerGallon = 25;
 }
 }
 Car.prototype.fill = function(gallons){
-  this.tank = [20];
+  this.tank += gallons;
   }
-Car.prototype.drive = function(distance){
-  this.odometer += distance;
-  this.tank.shift;
-if (`this.tank === []){
-return "I ran out of fuel at" + ${distance} + "miles");
+Car.prototype.drive = function(distance, tank, gallons){
+ this.tank -= gallons;
+ this.odometer += distance;
+
+  if( this.milesPerGallon * tank -distance === 0){
+  tank = 0;
+return "I ran out of fuel at" + `${distance}` + "miles";
 }
+else
+{ this.odometer += distance;
 }
 
 
@@ -111,7 +115,7 @@ return "I ran out of fuel at" + ${distance} + "miles");
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-constructor()
+constructor({name, age, location})
 }
 
 /*
