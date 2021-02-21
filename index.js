@@ -79,8 +79,24 @@ Person.prototype.toString = function(){
 */
 
 class Car {
-
+constructor (model, milesPerGallon){
+  this.tank = [0];
+  this.odometer =[0];
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
 }
+}
+Car.prototype.fill = function(gallons){
+  this.tank = [20];
+  }
+Car.prototype.drive = function(distance){
+  this.odometer += distance;
+  this.tank.shift;
+if (`this.tank === []){
+return "I ran out of fuel at" + ${distance} + "miles");
+}
+}
+
 
 /*
   TASK 3
@@ -95,7 +111,7 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-
+constructor()
 }
 
 /*
